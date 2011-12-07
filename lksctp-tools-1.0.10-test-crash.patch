@@ -1,0 +1,16 @@
+528463:  lksctp-tools testsuite fail: ./test_sctp_sendrecvmsg_v6
+
+Source: originally from nhorman@redhat.com, now in upstream patch tracker item
+https://sourceforge.net/tracker/download.php?group_id=26529&atid=387570&file_id=355597&aid=2916440
+
+diff -up lksctp-tools-1.0.11/src/func_tests/test_sctp_sendrecvmsg.c.orig lksctp-tools-1.0.11/src/func_tests/test_sctp_sendrecvmsg.c
+--- lksctp-tools-1.0.11/src/func_tests/test_sctp_sendrecvmsg.c.orig	2009-12-17 14:23:08.000000000 -0500
++++ lksctp-tools-1.0.11/src/func_tests/test_sctp_sendrecvmsg.c	2009-12-17 14:23:23.000000000 -0500
+@@ -177,6 +177,7 @@ int main(int argc, char *argv[])
+ 	buflen = REALLY_BIG;
+ 	big_buffer = test_malloc(buflen);
+ 	msgname_len = sizeof(msgname);
++	msg_flags = 0;
+ 	error = test_sctp_recvmsg(sk2, big_buffer, buflen,
+ 				  (struct sockaddr *)&msgname, &msgname_len,
+ 				  &sinfo, &msg_flags); 

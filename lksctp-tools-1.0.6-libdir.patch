@@ -1,0 +1,10 @@
+--- lksctp-tools-1.0.6/src/withsctp/withsctp.in.libdir	2006-09-19 15:10:53.000000000 +0200
++++ lksctp-tools-1.0.6/src/withsctp/withsctp.in	2006-09-19 15:12:50.000000000 +0200
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # -*- sh -*-
+-LIBDIR=@libdir@/@PACKAGE@
++LIBDIR=`rpm --eval "%{_libdir}"`/@PACKAGE@
+ BINDIR=@bindir@
+ export LD_PRELOAD=${LIBDIR}/libwithsctp.so.1.0.10
+ if ! ${BINDIR}/checksctp 2> /dev/null
